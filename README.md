@@ -16,4 +16,5 @@ Mehr Informationen [im Blog](http://knuspermagier.de/2014-drivebetter.html)
 ## Weitere Wichtige Informationen
 
 - Benutzt [AsyncImageView](https://github.com/nicklockwood/AsyncImageView)
+- Benutzt "Reload by Simple Icons from The Noun Project"
 - Lizenz: MIT
