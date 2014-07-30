@@ -13,6 +13,14 @@
 		F05D32F3197D3F0D00400FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D32F1197D3F0D00400FF9 /* Main.storyboard */; };
 		F05D32F5197D3F0D00400FF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05D32F4197D3F0D00400FF9 /* Images.xcassets */; };
 		F05D3301197D3F0E00400FF9 /* DriveBetterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D3300197D3F0E00400FF9 /* DriveBetterTests.m */; };
+		F05D330B197D3F7700400FF9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05D330A197D3F7700400FF9 /* MapKit.framework */; };
+		F05D330F197D456200400FF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05D330E197D456200400FF9 /* CoreLocation.framework */; };
+		F05D3312197D485D00400FF9 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D3311197D485D00400FF9 /* Car.m */; };
+		F05D3315197D4E8000400FF9 /* CarAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D3314197D4E8000400FF9 /* CarAnnotation.m */; };
+		F05D3317197D515F00400FF9 /* car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F05D3316197D515F00400FF9 /* car@2x.png */; };
+		F05D331B197D58DE00400FF9 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D331A197D58DE00400FF9 /* AsyncImageView.m */; };
+		F05D331F197D5C5100400FF9 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F05D331E197D5C5100400FF9 /* reload@2x.png */; };
+		F05D3321197D61B200400FF9 /* carhl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F05D3320197D61B200400FF9 /* carhl@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,17 @@
 		F05D32FA197D3F0E00400FF9 /* DriveBetterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveBetterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05D32FF197D3F0E00400FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F05D3300197D3F0E00400FF9 /* DriveBetterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriveBetterTests.m; sourceTree = "<group>"; };
+		F05D330A197D3F7700400FF9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F05D330E197D456200400FF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F05D3310197D485D00400FF9 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		F05D3311197D485D00400FF9 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		F05D3313197D4E8000400FF9 /* CarAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAnnotation.h; sourceTree = "<group>"; };
+		F05D3314197D4E8000400FF9 /* CarAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAnnotation.m; sourceTree = "<group>"; };
+		F05D3316197D515F00400FF9 /* car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car@2x.png"; sourceTree = "<group>"; };
+		F05D3319197D58DE00400FF9 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		F05D331A197D58DE00400FF9 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		F05D331E197D5C5100400FF9 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
+		F05D3320197D61B200400FF9 /* carhl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carhl@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05D330F197D456200400FF9 /* CoreLocation.framework in Frameworks */,
+				F05D330B197D3F7700400FF9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +79,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F01B7679197E9DE7000F8403 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				F05D3318197D58DE00400FF9 /* AsyncImageView */,
+			);
+			name = "3rd Party";
+			sourceTree = "<group>";
+		};
+		F01B767A197E9DF1000F8403 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F05D3310197D485D00400FF9 /* Car.h */,
+				F05D3311197D485D00400FF9 /* Car.m */,
+				F05D3313197D4E8000400FF9 /* CarAnnotation.h */,
+				F05D3314197D4E8000400FF9 /* CarAnnotation.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F05D32DB197D3F0D00400FF9 = {
 			isa = PBXGroup;
 			children = (
+				F05D330E197D456200400FF9 /* CoreLocation.framework */,
+				F05D330A197D3F7700400FF9 /* MapKit.framework */,
 				F05D32E6197D3F0D00400FF9 /* DriveBetter */,
 				F05D32FD197D3F0E00400FF9 /* DriveBetterTests */,
 				F05D32E5197D3F0D00400FF9 /* Products */,
@@ -79,6 +121,8 @@
 		F05D32E6197D3F0D00400FF9 /* DriveBetter */ = {
 			isa = PBXGroup;
 			children = (
+				F01B767A197E9DF1000F8403 /* Model */,
+				F01B7679197E9DE7000F8403 /* 3rd Party */,
 				F05D32EB197D3F0D00400FF9 /* AppDelegate.h */,
 				F05D32EC197D3F0D00400FF9 /* AppDelegate.m */,
 				F05D32EE197D3F0D00400FF9 /* ViewController.h */,
@@ -93,6 +137,9 @@
 		F05D32E7197D3F0D00400FF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F05D3316197D515F00400FF9 /* car@2x.png */,
+				F05D3320197D61B200400FF9 /* carhl@2x.png */,
+				F05D331E197D5C5100400FF9 /* reload@2x.png */,
 				F05D32E8197D3F0D00400FF9 /* Info.plist */,
 				F05D32E9197D3F0D00400FF9 /* main.m */,
 			);
@@ -114,6 +161,15 @@
 				F05D32FF197D3F0E00400FF9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F05D3318197D58DE00400FF9 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F05D3319197D58DE00400FF9 /* AsyncImageView.h */,
+				F05D331A197D58DE00400FF9 /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F05D32F3197D3F0D00400FF9 /* Main.storyboard in Resources */,
+				F05D3321197D61B200400FF9 /* carhl@2x.png in Resources */,
+				F05D3317197D515F00400FF9 /* car@2x.png in Resources */,
 				F05D32F5197D3F0D00400FF9 /* Images.xcassets in Resources */,
+				F05D331F197D5C5100400FF9 /* reload@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05D3315197D4E8000400FF9 /* CarAnnotation.m in Sources */,
+				F05D331B197D58DE00400FF9 /* AsyncImageView.m in Sources */,
 				F05D32F0197D3F0D00400FF9 /* ViewController.m in Sources */,
 				F05D32ED197D3F0D00400FF9 /* AppDelegate.m in Sources */,
+				F05D3312197D485D00400FF9 /* Car.m in Sources */,
 				F05D32EA197D3F0D00400FF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +464,7 @@
 				F05D3306197D3F0E00400FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F05D3307197D3F0E00400FF9 /* Build configuration list for PBXNativeTarget "DriveBetterTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +473,7 @@
 				F05D3309197D3F0E00400FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
