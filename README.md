@@ -2,7 +2,7 @@
 
 Ganz schmale App, die DriveNow-Autos in der Nähe anzeigt.
 
-![Screenshot](http://knuspermagier.de/wp-content/uploads/2014/07/drivebetterbig.png)
+![Screenshot](http://knuspermagier.de/wp-content/uploads/2014/07/drivebettersmall.png)
 
 Mehr Informationen [im Blog](http://knuspermagier.de/2014-drivebetter.html)
 
