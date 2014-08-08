@@ -114,7 +114,15 @@
 #pragma mark - Load cars
 
 - (void) loadCarsWithBlock:(void (^)(NSError *err, NSDictionary *cars))block {
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.HTTPAdditionalHeaders = @{
+            @"Origin": @"https://de.drive-now.com",
+            @"User-Agent": @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36",
+            @"X-Api-Key": @"API-KEY",
+            @"Referer": @"https://de.drive-now.com/"
+    };
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:@"https://api.drive-now.com/cars?cityId=40065&expand=full"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
