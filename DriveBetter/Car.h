@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Car : NSObject
+@interface Car : NSObject <NSCoding>
 
 @property (strong) NSString *name;
 @property (strong) NSString *modelName;
@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSURL *imageURL;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
+@property (nonatomic) NSInteger useTimes;
 
 + (Car*)carFromJSON:(NSDictionary *)json;
 

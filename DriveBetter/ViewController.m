@@ -11,6 +11,7 @@
 #import "Car.h"
 #import "CarAnnotation.h"
 #import "AsyncImageView.h"
+#import "CarDataProvider.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) MKDirectionsRequest *directionsRequest;
 @property (strong, nonatomic) MKDirections *directions;
 @property (nonatomic) BOOL requestedLocation;
+@property (strong, nonatomic) Car *currentCar;
 
 @end
 
@@ -38,6 +40,8 @@
     [self.locationManager requestAlwaysAuthorization];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadCars) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    [self.detailView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(detailViewTapped:)]];
      
     [self loadCars];
 }
@@ -48,6 +52,23 @@
     self.requestedLocation = YES;
     
     [self loadCars];
+}
+
+
+- (void) detailViewTapped:(id)sender {
+    UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:@"Add to used cars" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Add", nil];
+    [actionSheet showInView:self.detailView];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(!self.currentCar) {
+        return;
+    }
+    
+    if(buttonIndex == 0) {
+        [[CarDataProvider sharedProvider] addToUsedCars:self.currentCar];
+        [self updateDetailViewWithCar:self.currentCar];
+    }
 }
 
 #pragma mark - MKMapViewDelegate
@@ -113,41 +134,16 @@
 
 #pragma mark - Load cars
 
-- (void) loadCarsWithBlock:(void (^)(NSError *err, NSDictionary *cars))block {
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfiguration.HTTPAdditionalHeaders = @{
-            @"Origin": @"https://de.drive-now.com",
-            @"User-Agent": @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36",
-            @"X-Api-Key": @"API-KEY",
-            @"Referer": @"https://de.drive-now.com/"
-    };
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:@"https://api.drive-now.com/cars?cityId=40065&expand=full"] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            block(error, json);
-        });
-    }];
-    
-    [dataTask resume];
-}
-
 - (void) loadCars {
     self.locationButton.hidden = YES;
     [self.reloadIndicator startAnimating];
     
-    [self loadCarsWithBlock:^(NSError *err, NSDictionary *cars) {
+    [[CarDataProvider sharedProvider] liveDataWithBlock:^(NSError *err, NSArray *cars) {
         [self.reloadIndicator stopAnimating];
         self.locationButton.hidden = NO;
         
         [self.cars removeAllObjects];
-        
-        for(NSDictionary *car in cars[@"items"]) {
-            if([car[@"transmission"] isEqualToString:@"A"]) {
-                [self.cars addObject:[Car carFromJSON:car]];
-            }
-        }
+        [self.cars addObjectsFromArray:cars];
         
         [self updateMapMarkers];
         
@@ -160,19 +156,24 @@
             [self.mapView selectAnnotation:annotation animated:YES];
         }
     }];
+
 }
 
 #pragma mark - Update Views
 
 - (void) updateDetailViewWithCar:(Car*)car {
+    self.currentCar = car;
+    
     self.detailView.hidden = NO;
     
     self.walkingDistanceLabel.hidden = YES;
     self.routeLoadingIndicator.hidden = NO;
     [self.routeLoadingIndicator startAnimating];
     
+    NSString *alreadyUsed = car.useTimes > 0 ? [NSString stringWithFormat:@" - %ix", car.useTimes] : @"";
+    
     self.kennzeichenLabel.text = car.licensePlate;
-    self.infoLabel.text = [NSString stringWithFormat:@"%@ - “%@” - %i%%", car.modelName, car.name,(int)(car.fuelLevel*100)];
+    self.infoLabel.text = [NSString stringWithFormat:@"%@ - “%@” - %i%%%@", car.modelName, car.name,(int)(car.fuelLevel*100), alreadyUsed];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.imageURL = car.imageURL;
     

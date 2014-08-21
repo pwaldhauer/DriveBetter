@@ -25,5 +25,23 @@
 }
 
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.licensePlate forKey:@"licensePlate"];
+    [aCoder encodeObject:self.modelName forKey:@"modelName"];
+    [aCoder encodeInteger:self.useTimes forKey:@"useTimes"];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if(self) {
+        self.licensePlate = [aDecoder decodeObjectForKey:@"licensePlate"];
+        self.modelName = [aDecoder decodeObjectForKey:@"modelName"];
+        self.useTimes = [aDecoder decodeIntegerForKey:@"useTimes"];
+    }
+    
+    return self;
+}
+
 
 @end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,14 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vdn-Xy-a1I" userLabel="mapView">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                             </mapView>
                             <view hidden="YES" alpha="0.75" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-i9-OXJ" userLabel="detailView">
-                                <rect key="frame" x="0.0" y="398" width="480" height="82"/>
+                                <rect key="frame" x="0.0" y="398" width="600" height="82"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLr-2G-Z9j" userLabel="wrapperView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -246,10 +247,42 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-Na-mOs" userLabel="reloadActivity">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-Ds-bSS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1W5-sB-8ux">
+                                        <variation key="widthClass=compact" constant="25"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="25" id="k40-4I-v6e">
+                                        <variation key="widthClass=compact" constant="25"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" image="cars.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1W5-sB-8ux"/>
+                                        <exclude reference="k40-4I-v6e"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1W5-sB-8ux"/>
+                                        <include reference="k40-4I-v6e"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="8jQ-62-eHm" kind="presentation" id="3lr-ih-vDE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Grc-Na-mOs" secondAttribute="trailing" constant="20" id="6Ga-VX-V8y"/>
+                            <constraint firstItem="gkj-Ds-bSS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="LTe-2g-A1K">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="j2T-6i-tME" firstAttribute="width" secondItem="Grc-Na-mOs" secondAttribute="width" id="Pzk-Pk-04A"/>
                             <constraint firstItem="Grc-Na-mOs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="23" id="RLz-Kd-0Sd">
                                 <variation key="widthClass=compact" constant="20"/>
@@ -262,6 +295,9 @@
                             <constraint firstItem="Vdn-Xy-a1I" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="top" id="XsG-pW-3te"/>
                             <constraint firstAttribute="trailing" secondItem="Vdn-Xy-a1I" secondAttribute="trailing" id="iBE-bQ-OBO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Vdn-Xy-a1I" secondAttribute="bottom" id="pGJ-NO-tln"/>
+                            <constraint firstItem="gkj-Ds-bSS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="s1l-GA-dxv">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="O6s-i9-OXJ" secondAttribute="trailing" id="sQt-Ih-u6K"/>
                             <constraint firstAttribute="trailing" secondItem="j2T-6i-tME" secondAttribute="trailing" constant="16" id="zq8-uC-rVR">
                                 <variation key="widthClass=compact" constant="20"/>
@@ -271,8 +307,11 @@
                             <mask key="subviews">
                                 <exclude reference="j2T-6i-tME"/>
                                 <exclude reference="Grc-Na-mOs"/>
+                                <exclude reference="gkj-Ds-bSS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="LTe-2g-A1K"/>
+                                <exclude reference="s1l-GA-dxv"/>
                                 <exclude reference="6Ga-VX-V8y"/>
                                 <exclude reference="RLz-Kd-0Sd"/>
                                 <exclude reference="Pzk-Pk-04A"/>
@@ -285,8 +324,11 @@
                             <mask key="subviews">
                                 <include reference="j2T-6i-tME"/>
                                 <include reference="Grc-Na-mOs"/>
+                                <include reference="gkj-Ds-bSS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LTe-2g-A1K"/>
+                                <include reference="s1l-GA-dxv"/>
                                 <include reference="6Ga-VX-V8y"/>
                                 <include reference="RLz-Kd-0Sd"/>
                                 <include reference="Pzk-Pk-04A"/>
@@ -310,10 +352,111 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="141"/>
+            <point key="canvasLocation" x="-186" y="-123"/>
+        </scene>
+        <!--Used cars-->
+        <scene sceneID="Od0-KC-xaX">
+            <objects>
+                <tableViewController title="Used cars" id="ZXu-4w-iD6" customClass="UsedCarViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Zxy-7z-0Jq">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsedCarCell" rowHeight="60" id="hf9-4q-560" customClass="UsedCarTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hf9-4q-560" id="Boi-Oh-MX5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32,3km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-wI-fJC" userLabel="distanceLabel">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-DX3212" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgJ-HG-aQ2" userLabel="kennzeichenLabel">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="JgJ-HG-aQ2" secondAttribute="centerY" constant="0.5" id="BNP-BT-63J">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstAttribute="centerY" secondItem="yhL-wI-fJC" secondAttribute="centerY" constant="0.5" id="htc-l0-rEF">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstItem="JgJ-HG-aQ2" firstAttribute="leading" secondItem="Boi-Oh-MX5" secondAttribute="leadingMargin" constant="15" id="kP5-Di-spQ">
+                                            <variation key="widthClass=compact" constant="20"/>
+                                        </constraint>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yhL-wI-fJC" secondAttribute="trailing" constant="22" id="lJQ-MN-NFl">
+                                            <variation key="widthClass=compact" constant="20"/>
+                                        </constraint>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="yhL-wI-fJC"/>
+                                            <exclude reference="JgJ-HG-aQ2"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="BNP-BT-63J"/>
+                                            <exclude reference="kP5-Di-spQ"/>
+                                            <exclude reference="htc-l0-rEF"/>
+                                            <exclude reference="lJQ-MN-NFl"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="yhL-wI-fJC"/>
+                                            <include reference="JgJ-HG-aQ2"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="BNP-BT-63J"/>
+                                            <include reference="kP5-Di-spQ"/>
+                                            <include reference="htc-l0-rEF"/>
+                                            <include reference="lJQ-MN-NFl"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="yhL-wI-fJC" id="HWB-RV-eaV"/>
+                                    <outlet property="kennzeichenLabel" destination="JgJ-HG-aQ2" id="lu5-uP-eH4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZXu-4w-iD6" id="E5t-bj-Xvy"/>
+                            <outlet property="delegate" destination="ZXu-4w-iD6" id="hg1-4a-v6S"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Used cars" id="US2-sL-tX8">
+                        <barButtonItem key="backBarButtonItem" title="Close" id="6Qu-8X-dRi"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgo-Gd-fgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031" y="-475"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BCM-fB-k9B">
+            <objects>
+                <navigationController id="8jQ-62-eHm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dfQ-Wo-Y03">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZXu-4w-iD6" kind="relationship" relationship="rootViewController" id="fl6-nH-kyM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odf-ny-xNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="-476"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cars.png" width="25" height="25"/>
         <image name="reload.png" width="25" height="25"/>
     </resources>
 </document>

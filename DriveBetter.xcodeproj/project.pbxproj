@@ -21,6 +21,10 @@
 		F05D331B197D58DE00400FF9 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D331A197D58DE00400FF9 /* AsyncImageView.m */; };
 		F05D331F197D5C5100400FF9 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F05D331E197D5C5100400FF9 /* reload@2x.png */; };
 		F05D3321197D61B200400FF9 /* carhl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F05D3320197D61B200400FF9 /* carhl@2x.png */; };
+		F0CBC51C19A490F800B30A64 /* UsedCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CBC51B19A490F800B30A64 /* UsedCarTableViewCell.m */; };
+		F0CBC51F19A4913800B30A64 /* UsedCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CBC51E19A4913800B30A64 /* UsedCarViewController.m */; };
+		F0CBC52419A496DD00B30A64 /* CarDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CBC52319A496DD00B30A64 /* CarDataProvider.m */; };
+		F0CBC52619A4B4C800B30A64 /* cars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0CBC52519A4B4C800B30A64 /* cars@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,13 @@
 		F05D331A197D58DE00400FF9 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		F05D331E197D5C5100400FF9 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
 		F05D3320197D61B200400FF9 /* carhl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carhl@2x.png"; sourceTree = "<group>"; };
+		F0CBC51A19A490F800B30A64 /* UsedCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsedCarTableViewCell.h; sourceTree = "<group>"; };
+		F0CBC51B19A490F800B30A64 /* UsedCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsedCarTableViewCell.m; sourceTree = "<group>"; };
+		F0CBC51D19A4913800B30A64 /* UsedCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsedCarViewController.h; sourceTree = "<group>"; };
+		F0CBC51E19A4913800B30A64 /* UsedCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsedCarViewController.m; sourceTree = "<group>"; };
+		F0CBC52219A496DD00B30A64 /* CarDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarDataProvider.h; sourceTree = "<group>"; };
+		F0CBC52319A496DD00B30A64 /* CarDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarDataProvider.m; sourceTree = "<group>"; };
+		F0CBC52519A4B4C800B30A64 /* cars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cars@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +101,8 @@
 		F01B767A197E9DF1000F8403 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0CBC52219A496DD00B30A64 /* CarDataProvider.h */,
+				F0CBC52319A496DD00B30A64 /* CarDataProvider.m */,
 				F05D3310197D485D00400FF9 /* Car.h */,
 				F05D3311197D485D00400FF9 /* Car.m */,
 				F05D3313197D4E8000400FF9 /* CarAnnotation.h */,
@@ -121,12 +134,11 @@
 		F05D32E6197D3F0D00400FF9 /* DriveBetter */ = {
 			isa = PBXGroup;
 			children = (
+				F0CBC52819A4B64C00B30A64 /* ViewControllers */,
 				F01B767A197E9DF1000F8403 /* Model */,
 				F01B7679197E9DE7000F8403 /* 3rd Party */,
 				F05D32EB197D3F0D00400FF9 /* AppDelegate.h */,
 				F05D32EC197D3F0D00400FF9 /* AppDelegate.m */,
-				F05D32EE197D3F0D00400FF9 /* ViewController.h */,
-				F05D32EF197D3F0D00400FF9 /* ViewController.m */,
 				F05D32F1197D3F0D00400FF9 /* Main.storyboard */,
 				F05D32F4197D3F0D00400FF9 /* Images.xcassets */,
 				F05D32E7197D3F0D00400FF9 /* Supporting Files */,
@@ -137,6 +149,7 @@
 		F05D32E7197D3F0D00400FF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0CBC52519A4B4C800B30A64 /* cars@2x.png */,
 				F05D3316197D515F00400FF9 /* car@2x.png */,
 				F05D3320197D61B200400FF9 /* carhl@2x.png */,
 				F05D331E197D5C5100400FF9 /* reload@2x.png */,
@@ -170,6 +183,19 @@
 				F05D331A197D58DE00400FF9 /* AsyncImageView.m */,
 			);
 			path = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		F0CBC52819A4B64C00B30A64 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F05D32EE197D3F0D00400FF9 /* ViewController.h */,
+				F05D32EF197D3F0D00400FF9 /* ViewController.m */,
+				F0CBC51A19A490F800B30A64 /* UsedCarTableViewCell.h */,
+				F0CBC51B19A490F800B30A64 /* UsedCarTableViewCell.m */,
+				F0CBC51D19A4913800B30A64 /* UsedCarViewController.h */,
+				F0CBC51E19A4913800B30A64 /* UsedCarViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +281,7 @@
 				F05D32F3197D3F0D00400FF9 /* Main.storyboard in Resources */,
 				F05D3321197D61B200400FF9 /* carhl@2x.png in Resources */,
 				F05D3317197D515F00400FF9 /* car@2x.png in Resources */,
+				F0CBC52619A4B4C800B30A64 /* cars@2x.png in Resources */,
 				F05D32F5197D3F0D00400FF9 /* Images.xcassets in Resources */,
 				F05D331F197D5C5100400FF9 /* reload@2x.png in Resources */,
 			);
@@ -274,9 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0CBC51F19A4913800B30A64 /* UsedCarViewController.m in Sources */,
+				F0CBC52419A496DD00B30A64 /* CarDataProvider.m in Sources */,
 				F05D3315197D4E8000400FF9 /* CarAnnotation.m in Sources */,
 				F05D331B197D58DE00400FF9 /* AsyncImageView.m in Sources */,
 				F05D32F0197D3F0D00400FF9 /* ViewController.m in Sources */,
+				F0CBC51C19A490F800B30A64 /* UsedCarTableViewCell.m in Sources */,
 				F05D32ED197D3F0D00400FF9 /* AppDelegate.m in Sources */,
 				F05D3312197D485D00400FF9 /* Car.m in Sources */,
 				F05D32EA197D3F0D00400FF9 /* main.m in Sources */,
