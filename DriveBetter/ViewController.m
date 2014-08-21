@@ -56,7 +56,7 @@
 
 
 - (void) detailViewTapped:(id)sender {
-    UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:@"Add to used cars" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Add", nil];
+    UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Add to used cars", nil];
     [actionSheet showInView:self.detailView];
 }
 
