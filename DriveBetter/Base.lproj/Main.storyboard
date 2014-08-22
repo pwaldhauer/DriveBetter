@@ -222,9 +222,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2T-6i-tME" userLabel="locateButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="GMA-Lo-YHK"/>
-                                    <constraint firstAttribute="height" constant="25" id="JMx-Kh-Chy"/>
+                                    <constraint firstAttribute="width" constant="25" id="GMA-Lo-YHK">
+                                        <variation key="widthClass=compact" constant="49"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="25" id="JMx-Kh-Chy">
+                                        <variation key="widthClass=compact" constant="49"/>
+                                    </constraint>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                                 <state key="normal" image="reload.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -247,16 +252,17 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-Na-mOs" userLabel="reloadActivity">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-Ds-bSS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-Ds-bSS" userLabel="myCarsButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="1W5-sB-8ux">
-                                        <variation key="widthClass=compact" constant="25"/>
+                                        <variation key="widthClass=compact" constant="49"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="25" id="k40-4I-v6e">
-                                        <variation key="widthClass=compact" constant="25"/>
+                                        <variation key="widthClass=compact" constant="49"/>
                                     </constraint>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
                                 <state key="normal" image="cars.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -279,28 +285,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Grc-Na-mOs" secondAttribute="trailing" constant="20" id="6Ga-VX-V8y"/>
+                            <constraint firstAttribute="trailing" secondItem="Grc-Na-mOs" secondAttribute="trailing" constant="20" id="6Ga-VX-V8y">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="gkj-Ds-bSS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="LTe-2g-A1K">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="j2T-6i-tME" firstAttribute="width" secondItem="Grc-Na-mOs" secondAttribute="width" id="Pzk-Pk-04A"/>
                             <constraint firstItem="Grc-Na-mOs" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="23" id="RLz-Kd-0Sd">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="j2T-6i-tME" firstAttribute="height" secondItem="Grc-Na-mOs" secondAttribute="height" id="THy-IM-tUV"/>
                             <constraint firstItem="O6s-i9-OXJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TLn-2C-YQM"/>
                             <constraint firstItem="Vdn-Xy-a1I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TlC-Tq-P4m"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O6s-i9-OXJ" secondAttribute="bottom" id="X4b-Eo-yhM"/>
-                            <constraint firstItem="j2T-6i-tME" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="XTP-nC-rUd"/>
+                            <constraint firstItem="j2T-6i-tME" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="XTP-nC-rUd">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Vdn-Xy-a1I" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="top" id="XsG-pW-3te"/>
                             <constraint firstAttribute="trailing" secondItem="Vdn-Xy-a1I" secondAttribute="trailing" id="iBE-bQ-OBO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Vdn-Xy-a1I" secondAttribute="bottom" id="pGJ-NO-tln"/>
                             <constraint firstItem="gkj-Ds-bSS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="s1l-GA-dxv">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="-10"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="O6s-i9-OXJ" secondAttribute="trailing" id="sQt-Ih-u6K"/>
                             <constraint firstAttribute="trailing" secondItem="j2T-6i-tME" secondAttribute="trailing" constant="16" id="zq8-uC-rVR">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="10"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -526,7 +536,7 @@
                             <outlet property="delegate" destination="ZXu-4w-iD6" id="hg1-4a-v6S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Used cars" id="US2-sL-tX8">
+                    <navigationItem key="navigationItem" title="My cars" id="US2-sL-tX8">
                         <barButtonItem key="backBarButtonItem" title="Close" id="6Qu-8X-dRi"/>
                     </navigationItem>
                 </tableViewController>

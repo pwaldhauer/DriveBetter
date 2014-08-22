@@ -58,7 +58,7 @@
 }
 
 - (void)addTapped:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add used car" message:@"License plate" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add car" message:@"License plate" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [alertView show];
