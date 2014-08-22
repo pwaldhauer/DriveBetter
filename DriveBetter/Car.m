@@ -29,6 +29,7 @@
     [aCoder encodeObject:self.licensePlate forKey:@"licensePlate"];
     [aCoder encodeObject:self.modelName forKey:@"modelName"];
     [aCoder encodeInteger:self.useTimes forKey:@"useTimes"];
+    [aCoder encodeInteger:self.name forKey:@"name"];
     
 }
 
@@ -38,6 +39,7 @@
         self.licensePlate = [aDecoder decodeObjectForKey:@"licensePlate"];
         self.modelName = [aDecoder decodeObjectForKey:@"modelName"];
         self.useTimes = [aDecoder decodeIntegerForKey:@"useTimes"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
     }
     
     return self;

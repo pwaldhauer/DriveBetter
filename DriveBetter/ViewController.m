@@ -12,6 +12,7 @@
 #import "CarAnnotation.h"
 #import "AsyncImageView.h"
 #import "CarDataProvider.h"
+#import "UsedCarViewController.h"
 
 @interface ViewController ()
 
@@ -54,7 +55,6 @@
     [self loadCars];
 }
 
-
 - (void) detailViewTapped:(id)sender {
     UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Add to used cars", nil];
     [actionSheet showInView:self.detailView];
@@ -68,6 +68,31 @@
     if(buttonIndex == 0) {
         [[CarDataProvider sharedProvider] addToUsedCars:self.currentCar];
         [self updateDetailViewWithCar:self.currentCar];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"prepare for säge");
+    
+    if(![segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        return;
+    }
+    
+    UINavigationController *navigationController = (UINavigationController*)segue.destinationViewController;
+    
+    if(![navigationController.visibleViewController isKindOfClass:[UsedCarViewController class]]) {
+        return;
+    }
+    
+    ((UsedCarViewController*)navigationController.visibleViewController).delegate = self;
+}
+
+- (void)carTapped:(Car *)car {
+    CarAnnotation *annotation = [self annotationForCar:car];
+    
+    if(annotation ) {
+        [self.mapView showAnnotations:@[ annotation] animated:YES];
+        [self.mapView selectAnnotation:annotation animated:YES];
     }
 }
 

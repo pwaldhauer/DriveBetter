@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Car.h"
+
+@protocol UsedCarViewControllerDelegate <NSObject>
+
+@required
+- (void)carTapped:(Car*)car;
+@end
 
 @interface UsedCarViewController : UITableViewController <UIAlertViewDelegate>
+
+@property (weak, nonatomic) id<UsedCarViewControllerDelegate> delegate;
 
 @end

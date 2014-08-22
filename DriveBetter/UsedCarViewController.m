@@ -98,6 +98,7 @@
     
     cell.kennzeichenLabel.text = car.licensePlate;
     cell.distanceLabel.text = [NSString stringWithFormat:@"%ix", car.useTimes];
+    cell.nameLabel.text = car.name;
     
     return cell;
 }
@@ -127,6 +128,19 @@
         [[CarDataProvider sharedProvider] removeFromUsedCars:car];
         [self refreshData];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Car *car = ((NSArray*)self.data[self.data.allKeys[indexPath.section]])[indexPath.row];
+    
+    NSLog(@"Delegate: %@", self.delegate);
+    
+    if(!self.delegate || ![self.delegate respondsToSelector:@selector(carTapped:)]) {
+        return;
+    }
+    
+    [self.delegate carTapped:car];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
