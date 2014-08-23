@@ -29,7 +29,7 @@
     [aCoder encodeObject:self.licensePlate forKey:@"licensePlate"];
     [aCoder encodeObject:self.modelName forKey:@"modelName"];
     [aCoder encodeInteger:self.useTimes forKey:@"useTimes"];
-    [aCoder encodeInteger:self.name forKey:@"name"];
+    [aCoder encodeObject:self.name forKey:@"name"];
     
 }
 
